@@ -29,8 +29,7 @@ def svt(A, mask, tau=None,delta=None, epsilon=1e-2, epoch=1000, regularisation='
 
     error = np.linalg.norm(projection( (X - A),  mask))  / np.linalg.norm(projection(A, mask)) 
     obj = 0.5*np.linalg.norm(projection(X-A, mask))**2 + penalty(S_t, regularisation, _lambda, gamma)
-    if(error<=1):
-      e.append(error)
+    e.append(error)
     # else:
     #   e.append(0.97)
     if i%10==0:
